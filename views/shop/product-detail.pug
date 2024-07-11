@@ -1,0 +1,12 @@
+extends ../includes/layout.pug
+
+block content   
+    main.centered
+        h1.product_title= product.title
+        .card__image
+            img(src=product.imageUrl, alt=product.title)
+        h2.product_price= product.price 
+        p.product_desc= product.description
+        form(action="/cart", method="POST")
+            button.btn Add to Cart
+            input(type="hidden" name="prodId" value = product.id) 
